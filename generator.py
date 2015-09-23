@@ -2,6 +2,7 @@ import random as r
 #to fix - number of weapons granted by classes (multiples of same weapon
 # bard instrument proficiencies don't match instrument equipment gives
 
+#random selections should be made as late as possible
 
 #Huge index of items/other 'selectable' options
 SKILLSOPT = [
@@ -1166,10 +1167,10 @@ BARD = Classes(
     )
 options = [WEAPONS[22],WEAPONS[26],WEAPONS[r.randint(0,14)]]
 BARD.weapons.append(options[r.randint(0,len(options)-1)])
-##option = randOption(TOOLS[29:])
-##print(option)
-##BARD.otherProficiencies[0].append(option)
-##BARD.equipment[0].append(option)
+option = randOption(TOOLS[29:])
+BARD.otherProficiencies[0].append(option)
+BARD.equipment[0].append(option)
+#need two more instrument proficiencies
 
 CLASSLIST = [
     BARBARIAN,
